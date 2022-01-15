@@ -1,0 +1,2 @@
+﻿CapsLock::
+send {Up}
