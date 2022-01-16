@@ -1,41 +1,62 @@
 #IfWinNotActive, ahk_exe ModernWarfare.exe
-$a::
-KeyWait, a
-If A_TimeSinceThisHotkey > 500
-	Send á
-Else
-	Send a
-Return
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Caracteres en español usando CapsLock
+; Presionar CapsLock mas la vocal para acentuarla
+; Para la ñ se puede usar la n o la tecla ; (porque ahí estaba la ñ originalmente)
+; Para la ¿ usamos CapsLock y la tecla que tiene actualmente el ?
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-$e::
-KeyWait, e
-If A_TimeSinceThisHotkey > 500
-	Send é
+; mapear la n como ñ
+CapsLock & n::
+If GetKeyState("Shift", "P")
+    Send Ñ
 Else
-	Send e
-Return
+    Send ñ
+return 
 
-$i::
-KeyWait, i
-If A_TimeSinceThisHotkey > 500
-	Send í
+; mapear la ; como ñ
+CapsLock & `;::
+If GetKeyState("Shift", "P")
+    Send Ñ
 Else
-	Send i
-Return
+    Send ñ
+return 
 
-$o::
-KeyWait, o
-If A_TimeSinceThisHotkey > 500
-	Send ó
+; mapear la ? como ¿
+CapsLock & /::¿
+
+; mapear las vocales
+CapsLock & a::
+If GetKeyState("Shift", "P")
+    Send Á
 Else
-	Send o
-Return
+    Send á
+return
 
-$u::
-KeyWait, u
-If A_TimeSinceThisHotkey > 500
-	Send ú
+CapsLock & e::
+If GetKeyState("Shift", "P")
+    Send É
 Else
-	Send u
-Return
+    Send é
+return 
 
+CapsLock & i::
+If GetKeyState("Shift", "P")
+    Send Í
+Else
+    Send í
+return 
+
+CapsLock & o::
+If GetKeyState("Shift", "P")
+    Send Ó
+Else
+    Send ó
+return 
+
+CapsLock & u::
+If GetKeyState("Shift", "P")
+    Send Ú
+Else
+    Send ú
+return
