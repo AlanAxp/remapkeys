@@ -14,13 +14,8 @@ Else
     Send ñ
 return 
 
-; mapear la ; como ñ
-CapsLock & `;::
-If GetKeyState("Shift", "P")
-    Send Ñ
-Else
-    Send ñ
-return 
+; mapear la ! como ¡
+CapsLock & !::¡
 
 ; mapear la ? como ¿
 CapsLock & /::¿
