@@ -14,6 +14,9 @@ send {Delete}
 return
 
 
-
+#IfWinNotActive, ahk_exe ModernWarfare.exe
+LShift & j::
+send {Backspace} 
+return
 
 
